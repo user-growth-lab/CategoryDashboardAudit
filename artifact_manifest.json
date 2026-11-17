@@ -51,7 +51,7 @@
     "verify_repository.py"
   ],
   "artifact_type": "wsdm27_focused_anonymous_reviewer_repository",
-  "build_version": "wsdm27-focused-reviewer-repository-v6.0",
+  "build_version": "CategoryDashboardAudit-v1.0.0",
   "content_scope": {
     "latex_sources_included": false,
     "main_manuscript_pdf_included": false,
@@ -73,10 +73,10 @@
   "payload_file_count": 47,
   "payload_sha256": {
     ".gitignore": "4edb2b3deb311cf21d93c16be51b0c39a2821e663530f4525cd2116d9a05a952",
-    "DATA_ACCESS_AND_RELEASE_BOUNDARY.md": "0b8f56cfbce48034230c4f2a8a52cb9ed577672e37d33bbe238ce5cd12518f37",
-    "LICENSE": "3a00353b9610bf3050bba2b0c3cb0e4764bf400c84a38ae1f33ea6dda469cf45",
-    "README.md": "f052b2038c497bb18f03f75e92f662178dd34c67da711913b03a588984c677e6",
-    "THIRD_PARTY_NOTICES.md": "0477ae9945fe3db0a3a1b6f5a2e228072e83ab088eb7a98f324c10d2e037b5c7",
+    "DATA_ACCESS_AND_RELEASE_BOUNDARY.md": "ea79cda7c85d6b013aefaaae5f3d3eaa44f6c566d869a3d77b388bbfd40cdb59",
+    "LICENSE": "5964d8337e67103aa9c66fca3bb8d488fc4d2acbbf6319effb5281fecf171bef",
+    "README.md": "571acf296177e4710a16943c87351c089fe370a0fd98a6ec95d9f3a5c9918291",
+    "THIRD_PARTY_NOTICES.md": "d5383dbfecb791cd09274dbb49fc94b3a757cb6f1f648e303ba2c46a9038d6ef",
     "code/audit_metrics.py": "7860e7c21ba06812d2ef42e781369d708e25b4385868222ceee84c5fb180b66d",
     "code/category_labels.py": "2128a4938a163589132f5332bffec410595eacba380e36629757eb334e9d70c9",
     "code/causal_baselines.py": "a825fee8eacfeae2ef23c110220ce41c2ca82ee5b3ecf7c2154188c84d7d51ff",
@@ -126,7 +126,22 @@
     "raw_or_user_level_data_included": false,
     "review_or_internal_notes_included": false
   },
-  "repository_name": "wsdm27_anonymous_reviewer_repository_v6",
+  "release": {
+    "authors": [
+      "Yu Zhang",
+      "Zhihan Wang",
+      "Yuhang Lu",
+      "Shuai Li"
+    ],
+    "corresponding_author": "Zhihan Wang",
+    "license": "MIT",
+    "paper_doi": "10.1145/3862322.3863593",
+    "paper_title": "When Category Means Move: A Paired-Support Audit of Recommendation Logs with Random Insertions",
+    "release_url": "https://github.com/user-growth-lab/CategoryDashboardAudit/releases/tag/v1.0.0",
+    "repository_url": "https://github.com/user-growth-lab/CategoryDashboardAudit",
+    "version": "v1.0.0"
+  },
+  "repository_name": "CategoryDashboardAudit",
   "schema_version": 1,
   "scientific_snapshot": {
     "categories": 38,
