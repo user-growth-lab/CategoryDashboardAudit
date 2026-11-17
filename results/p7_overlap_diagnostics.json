@@ -1,0 +1,277 @@
+{
+  "base_sample_scope": {
+    "common_videos_only": true,
+    "date_max": 20220508,
+    "date_min": 20220422,
+    "kuairand_category_field": "first_level_category_name -> cat1_name",
+    "kuairand_category_join": "final_video_id -> video_id",
+    "kuairand_category_mapping_rows": 7571,
+    "kuairand_category_path_env": "KUAIRAND_CATEGORY_PATH",
+    "kuairand_category_source_name": "kuairand_pure_video_categories.csv",
+    "kuairand_root_env": "KUAIRAND_ROOT",
+    "matched_period": true,
+    "n_common_categories": 38,
+    "n_common_videos": 5672,
+    "random_rows": 893793,
+    "random_users": 26998,
+    "random_videos": 5672,
+    "standard_rows": 219707,
+    "standard_users": 24483,
+    "standard_videos": 5672,
+    "tab": 1
+  },
+  "baselines": {
+    "adjustment_set": "user identity only",
+    "aggregation_warning": "Naive/HT/Hajek/AIPW are row-weighted; user demeaning averages observed user-category cells equally within category. The table shares an input cohort and reference, not one aggregation target.",
+    "aipw_cross_fitted": {
+      "centered_shape_mae": 0.0407,
+      "mae": 0.1989,
+      "max_abs_error": 0.2873,
+      "rank_corr": 0.807,
+      "top10_overlap": 0.8
+    },
+    "centered_shape_definition": "subtract random-category-exposure-share-weighted category mean from both the estimate and randomized reference; report unweighted MAE across categories",
+    "eligible_users_missing_from_random": 5,
+    "hajek_ipw_cross_fitted": {
+      "centered_shape_mae": 0.0482,
+      "mae": 0.1949,
+      "max_abs_error": 0.2987,
+      "rank_corr": 0.8009,
+      "top10_overlap": 0.7
+    },
+    "ht_ipw_cross_fitted": {
+      "centered_shape_mae": 0.1178,
+      "mae": 0.18,
+      "max_abs_error": 0.3919,
+      "rank_corr": 0.705,
+      "top10_overlap": 0.6
+    },
+    "identification_warning": "Diagnostic only: user-conditional exchangeability and positivity may fail; item composition and user-category match remain unobserved.",
+    "input_cohort": "paired random/production users selected by at least 5 production categories on exact paired video support",
+    "n_eligible_users": 12472,
+    "n_standard_eligible_before_pairing": 12477,
+    "naive_paired_users": {
+      "centered_shape_mae": 0.0491,
+      "mae": 0.1935,
+      "max_abs_error": 0.3037,
+      "rank_corr": 0.7833,
+      "top10_overlap": 0.7
+    },
+    "primary_scope_id": "4a262302e95474af4ac6d5c17b93625a943ad1e2f0692ae664a5fc76d75ac9f0",
+    "propensity_floor_sensitivity": {
+      "floor_0.01": {
+        "aipw": {
+          "centered_shape_mae": 0.0407,
+          "mae": 0.1989,
+          "max_abs_error": 0.2873,
+          "rank_corr": 0.807,
+          "top10_overlap": 0.8
+        },
+        "clipped_fraction_mean": 0.5106,
+        "effective_sample_size_min": 106.2,
+        "hajek": {
+          "centered_shape_mae": 0.0482,
+          "mae": 0.1949,
+          "max_abs_error": 0.2987,
+          "rank_corr": 0.8009,
+          "top10_overlap": 0.7
+        },
+        "ht": {
+          "centered_shape_mae": 0.1178,
+          "mae": 0.18,
+          "max_abs_error": 0.3919,
+          "rank_corr": 0.705,
+          "top10_overlap": 0.6
+        }
+      },
+      "floor_0.02": {
+        "aipw": {
+          "centered_shape_mae": 0.038,
+          "mae": 0.1988,
+          "max_abs_error": 0.282,
+          "rank_corr": 0.8028,
+          "top10_overlap": 0.8
+        },
+        "clipped_fraction_mean": 0.6243,
+        "effective_sample_size_min": 107.5,
+        "hajek": {
+          "centered_shape_mae": 0.0483,
+          "mae": 0.1948,
+          "max_abs_error": 0.3001,
+          "rank_corr": 0.7888,
+          "top10_overlap": 0.7
+        },
+        "ht": {
+          "centered_shape_mae": 0.1445,
+          "mae": 0.1147,
+          "max_abs_error": 0.3468,
+          "rank_corr": 0.5525,
+          "top10_overlap": 0.5
+        }
+      },
+      "floor_0.05": {
+        "aipw": {
+          "centered_shape_mae": 0.036,
+          "mae": 0.1985,
+          "max_abs_error": 0.2786,
+          "rank_corr": 0.8022,
+          "top10_overlap": 0.8
+        },
+        "clipped_fraction_mean": 0.7433,
+        "effective_sample_size_min": 108.0,
+        "hajek": {
+          "centered_shape_mae": 0.0485,
+          "mae": 0.1939,
+          "max_abs_error": 0.3032,
+          "rank_corr": 0.7862,
+          "top10_overlap": 0.7
+        },
+        "ht": {
+          "centered_shape_mae": 0.1392,
+          "mae": 0.0944,
+          "max_abs_error": 0.2886,
+          "rank_corr": 0.4529,
+          "top10_overlap": 0.3
+        }
+      }
+    },
+    "user_demeaned_random_mean_calibrated": {
+      "centered_shape_mae": 0.0387,
+      "mae": 0.0387,
+      "max_abs_error": 0.0996,
+      "rank_corr": 0.7888,
+      "top10_overlap": 0.8
+    }
+  },
+  "primary_paired_scope": {
+    "definition": "standard users with at least min_categories, intersected with random user IDs; common-video and standard-coverage restrictions iterated to a fixed point",
+    "eligible_users_missing_from_random": 5,
+    "final": {
+      "category_name_sha256": "22f5b9010fdbc3b634a2401a1768068789a93f8ae9770c19fbe7b1911580c3cc",
+      "category_names": [
+        "\u4e09\u519c",
+        "\u4e8c\u6b21\u5143",
+        "\u4eb2\u5b50",
+        "\u4eba\u6587",
+        "\u5065\u5eb7",
+        "\u5065\u8eab",
+        "\u5176\u4ed6",
+        "\u519b\u4e8b",
+        "\u559c\u5267",
+        "\u5947\u4eba\u5f02\u8c61",
+        "\u5ba0\u7269",
+        "\u5f71\u89c6\u7efc",
+        "\u60c5\u611f",
+        "\u623f\u4ea7\u5bb6\u5c45",
+        "\u6444\u5f71",
+        "\u6559\u80b2",
+        "\u65c5\u6e38",
+        "\u65f6\u5c1a",
+        "\u65f6\u653f\u8d44\u8baf",
+        "\u660e\u661f\u5a31\u4e50",
+        "\u661f\u5ea7\u547d\u7406",
+        "\u6c11\u751f\u8d44\u8baf",
+        "\u6c7d\u8f66",
+        "\u6e38\u620f",
+        "\u751f\u6d3b",
+        "\u77ed\u5267",
+        "\u79d1\u5b66\u4e0e\u6cd5\u5f8b",
+        "\u7f8e\u5986",
+        "\u7f8e\u98df",
+        "\u81ea\u62cd",
+        "\u821e\u8e48",
+        "\u827a\u672f",
+        "\u8bfb\u4e66",
+        "\u8d22\u7ecf",
+        "\u8fd0\u52a8",
+        "\u97f3\u4e50",
+        "\u989c\u503c",
+        "\u9ad8\u65b0\u6570\u7801"
+      ],
+      "minimum_standard_user_category_coverage": 5,
+      "random": {
+        "categories": 38,
+        "rows": 467919,
+        "users": 12472,
+        "videos": 5486
+      },
+      "standard": {
+        "categories": 38,
+        "rows": 180645,
+        "users": 12472,
+        "videos": 5486
+      },
+      "user_id_sha256": "37e8c41ce075aa26e47760d1cfee3ae4754b1049100c8f555caa58f29d6de5b3",
+      "video_id_sha256": "9cf7676393e264b8296e16561c2239de19069f3e97c890d51f4f7c0705875d40"
+    },
+    "initial": {
+      "random": {
+        "categories": 38,
+        "rows": 893793,
+        "users": 26998,
+        "videos": 5672
+      },
+      "standard": {
+        "categories": 38,
+        "rows": 219707,
+        "users": 24483,
+        "videos": 5672
+      }
+    },
+    "invariants": {
+      "same_category_set": true,
+      "same_user_set": true,
+      "same_video_set": true,
+      "standard_coverage_satisfied": true
+    },
+    "iteration_log": [
+      {
+        "common_videos": 5486,
+        "iteration": 1,
+        "paired_users": 12472,
+        "random_rows": 467919,
+        "standard_rows": 180645
+      },
+      {
+        "common_videos": 5486,
+        "iteration": 2,
+        "paired_users": 12472,
+        "random_rows": 467919,
+        "standard_rows": 180645
+      }
+    ],
+    "iterations_to_fixed_point": 2,
+    "min_categories": 5,
+    "primary_scope_id": "4a262302e95474af4ac6d5c17b93625a943ad1e2f0692ae664a5fc76d75ac9f0",
+    "standard_eligible_users_before_random_intersection": 12477,
+    "users_after_initial_random_intersection": 12472
+  },
+  "random_bucket_exposure": {
+    "per_category": {
+      "max": 65656,
+      "median": 7320,
+      "min": 702,
+      "min_category": "\u65f6\u653f\u8d44\u8baf",
+      "n_categories": 38
+    },
+    "per_video": {
+      "median": 87,
+      "n_videos": 5486,
+      "p10": 73
+    }
+  },
+  "residual_diagnostics": {
+    "cell_dm_std_mean": 0.3097,
+    "n_categories": 38,
+    "r2_linear_on_shift_logfreq": 0.03,
+    "resid_mae": 0.0387,
+    "spearman_resid_vs_cat_frequency": 0.054,
+    "spearman_resid_vs_exposure_shift": -0.256,
+    "spearman_resid_vs_n_users": -0.046,
+    "top_abs_resid": {
+      "\u5065\u8eab": 0.0903,
+      "\u519b\u4e8b": 0.0819,
+      "\u5947\u4eba\u5f02\u8c61": 0.0996
+    }
+  }
+}

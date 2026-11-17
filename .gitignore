@@ -1,0 +1,26 @@
+.DS_Store
+.pytest_cache/
+__pycache__/
+*.py[cod]
+config.local.env
+output/
+
+# Raw/derived datasets are local-only. Keep schemas, code, and manifests.
+data/*.csv
+data/*.csv.gz
+data/*.zip
+data/*.npz
+data/KuaiRand-Pure/
+
+# LaTeX build products
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.fls
+paper/*.fdb_latexmk
+
+# Historical reviewer snapshots contain superseded numbers and are excluded
+# from anonymous/reproducibility artifacts.
+paper/review/

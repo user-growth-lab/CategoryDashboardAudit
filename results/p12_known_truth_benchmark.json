@@ -1,0 +1,3038 @@
+{
+  "analysis": "P12 empirically calibrated known-truth stress test",
+  "calibration_source": {
+    "field": "item_gap_accounting.per_category.*.random_exposure_share",
+    "file": "p8_paired_audit.json",
+    "sha256": "1268119e93622b462cb4cb7c2fb96b2e0748e5c1b7f912752b2a48949ed259eb"
+  },
+  "category_names": [
+    "\u4e09\u519c",
+    "\u4e8c\u6b21\u5143",
+    "\u4eb2\u5b50",
+    "\u4eba\u6587",
+    "\u5065\u5eb7",
+    "\u5065\u8eab",
+    "\u5176\u4ed6",
+    "\u519b\u4e8b",
+    "\u559c\u5267",
+    "\u5947\u4eba\u5f02\u8c61",
+    "\u5ba0\u7269",
+    "\u5f71\u89c6\u7efc",
+    "\u60c5\u611f",
+    "\u623f\u4ea7\u5bb6\u5c45",
+    "\u6444\u5f71",
+    "\u6559\u80b2",
+    "\u65c5\u6e38",
+    "\u65f6\u5c1a",
+    "\u65f6\u653f\u8d44\u8baf",
+    "\u660e\u661f\u5a31\u4e50",
+    "\u661f\u5ea7\u547d\u7406",
+    "\u6c11\u751f\u8d44\u8baf",
+    "\u6c7d\u8f66",
+    "\u6e38\u620f",
+    "\u751f\u6d3b",
+    "\u77ed\u5267",
+    "\u79d1\u5b66\u4e0e\u6cd5\u5f8b",
+    "\u7f8e\u5986",
+    "\u7f8e\u98df",
+    "\u81ea\u62cd",
+    "\u821e\u8e48",
+    "\u827a\u672f",
+    "\u8bfb\u4e66",
+    "\u8d22\u7ecf",
+    "\u8fd0\u52a8",
+    "\u97f3\u4e50",
+    "\u989c\u503c",
+    "\u9ad8\u65b0\u6570\u7801"
+  ],
+  "estimator_definitions": {
+    "cell_equal_demean": "observed user-category cell-equal user demeaning plus the known target grand mean",
+    "naive": "standard row-weighted category mean",
+    "oracle_dm_hajek": "oracle residualized H\u00e1jek control variate around the exact simulated conditional-outcome surface; not a fitted DR learner",
+    "oracle_hajek": "self-normalized target/behavior importance weighting with known simulated propensities",
+    "row_weighted_demean": "row-weighted user residual plus the known target grand mean",
+    "scalar_level_shift": "naive centered shape plus the known target grand mean"
+  },
+  "interpretation_boundary": "Synthetic failure-boundary evidence calibrated only to the paired KuaiRand random category shares; it does not estimate a real platform effect or validate an estimator universally.",
+  "items_per_category": {
+    "\u4e09\u519c": 8,
+    "\u4e8c\u6b21\u5143": 59,
+    "\u4eb2\u5b50": 10,
+    "\u4eba\u6587": 9,
+    "\u5065\u5eb7": 7,
+    "\u5065\u8eab": 7,
+    "\u5176\u4ed6": 6,
+    "\u519b\u4e8b": 8,
+    "\u559c\u5267": 37,
+    "\u5947\u4eba\u5f02\u8c61": 7,
+    "\u5ba0\u7269": 20,
+    "\u5f71\u89c6\u7efc": 89,
+    "\u60c5\u611f": 14,
+    "\u623f\u4ea7\u5bb6\u5c45": 12,
+    "\u6444\u5f71": 10,
+    "\u6559\u80b2": 8,
+    "\u65c5\u6e38": 14,
+    "\u65f6\u5c1a": 14,
+    "\u65f6\u653f\u8d44\u8baf": 5,
+    "\u660e\u661f\u5a31\u4e50": 23,
+    "\u661f\u5ea7\u547d\u7406": 7,
+    "\u6c11\u751f\u8d44\u8baf": 13,
+    "\u6c7d\u8f66": 14,
+    "\u6e38\u620f": 72,
+    "\u751f\u6d3b": 19,
+    "\u77ed\u5267": 33,
+    "\u79d1\u5b66\u4e0e\u6cd5\u5f8b": 11,
+    "\u7f8e\u5986": 18,
+    "\u7f8e\u98df": 48,
+    "\u81ea\u62cd": 9,
+    "\u821e\u8e48": 23,
+    "\u827a\u672f": 22,
+    "\u8bfb\u4e66": 9,
+    "\u8d22\u7ecf": 7,
+    "\u8fd0\u52a8": 31,
+    "\u97f3\u4e50": 32,
+    "\u989c\u503c": 16,
+    "\u9ad8\u65b0\u6570\u7801": 9
+  },
+  "mean_scale_additive_positive_control": {
+    "definition": "Bernoulli mean is exactly user-level plus category-level additive; serving selects the user level by category. This is a positive control for the demeaning assumption, not a realistic universal DGP.",
+    "estimators": {
+      "cell_equal_demean": {
+        "absolute_mae": {
+          "interval_95_across_replications": [
+            0.013481677737292613,
+            0.021514974431879
+          ],
+          "mean": 0.017478017094533737,
+          "median": 0.01711547693559721,
+          "monte_carlo_standard_error_of_mean": 0.00023395026392473953
+        },
+        "centered_mae": {
+          "interval_95_across_replications": [
+            0.013003377444612801,
+            0.02081155903694323
+          ],
+          "mean": 0.016871487873422134,
+          "median": 0.016672188198140155,
+          "monte_carlo_standard_error_of_mean": 0.00022415612030195496
+        },
+        "max_abs_error": {
+          "interval_95_across_replications": [
+            0.04544690119043404,
+            0.12440334782583784
+          ],
+          "mean": 0.07137494368903474,
+          "median": 0.06677660677336439,
+          "monte_carlo_standard_error_of_mean": 0.0020417577538229823
+        },
+        "rank_corr": {
+          "interval_95_across_replications": [
+            0.8438286464602254,
+            0.9562534194113141
+          ],
+          "mean": 0.9070876988806256,
+          "median": 0.9101652259546995,
+          "monte_carlo_standard_error_of_mean": 0.003227936125924029
+        },
+        "top10_overlap": {
+          "interval_95_across_replications": [
+            0.7,
+            0.9
+          ],
+          "mean": 0.804,
+          "median": 0.8,
+          "monte_carlo_standard_error_of_mean": 0.007643575238345107
+        },
+        "top10_regret": {
+          "interval_95_across_replications": [
+            0.0003372730100006299,
+            0.011612036180398947
+          ],
+          "mean": 0.004723004193683431,
+          "median": 0.004341059065843367,
+          "monte_carlo_standard_error_of_mean": 0.00030571638554191375
+        }
+      },
+      "naive": {
+        "absolute_mae": {
+          "interval_95_across_replications": [
+            0.02431220324192106,
+            0.03750380390342576
+          ],
+          "mean": 0.031178879865607502,
+          "median": 0.03149716712258903,
+          "monte_carlo_standard_error_of_mean": 0.00034744763389200857
+        },
+        "centered_mae": {
+          "interval_95_across_replications": [
+            0.02444092445755466,
+            0.03749548777231391
+          ],
+          "mean": 0.031072899491975402,
+          "median": 0.031195438082091444,
+          "monte_carlo_standard_error_of_mean": 0.0003540668979308061
+        },
+        "max_abs_error": {
+          "interval_95_across_replications": [
+            0.06780780554723319,
+            0.13021477291155437
+          ],
+          "mean": 0.09090207282948688,
+          "median": 0.08803894644174293,
+          "monte_carlo_standard_error_of_mean": 0.0016985964287337479
+        },
+        "rank_corr": {
+          "interval_95_across_replications": [
+            0.6465641755115439,
+            0.8973848342269394
+          ],
+          "mean": 0.7986270388896436,
+          "median": 0.8032607506291717,
+          "monte_carlo_standard_error_of_mean": 0.006461710114784698
+        },
+        "top10_overlap": {
+          "interval_95_across_replications": [
+            0.5,
+            0.8524999999999991
+          ],
+          "mean": 0.695,
+          "median": 0.7,
+          "monte_carlo_standard_error_of_mean": 0.010087996667707459
+        },
+        "top10_regret": {
+          "interval_95_across_replications": [
+            0.004036340677056214,
+            0.02221474455241546
+          ],
+          "mean": 0.01134753274010301,
+          "median": 0.010198950793139594,
+          "monte_carlo_standard_error_of_mean": 0.0005590228339929939
+        }
+      },
+      "oracle_dm_hajek": {
+        "absolute_mae": {
+          "interval_95_across_replications": [
+            0.016696013000202625,
+            0.027173267258903008
+          ],
+          "mean": 0.021647983977290414,
+          "median": 0.0212571576681198,
+          "monte_carlo_standard_error_of_mean": 0.00030886066734540587
+        },
+        "centered_mae": {
+          "interval_95_across_replications": [
+            0.016550960319994118,
+            0.026756649406900156
+          ],
+          "mean": 0.021469250469510016,
+          "median": 0.02111076625152007,
+          "monte_carlo_standard_error_of_mean": 0.0003092108558045276
+        },
+        "max_abs_error": {
+          "interval_95_across_replications": [
+            0.052334561818511295,
+            0.17113715671877613
+          ],
+          "mean": 0.09212447259893755,
+          "median": 0.08708911045149689,
+          "monte_carlo_standard_error_of_mean": 0.0029867162316863085
+        },
+        "rank_corr": {
+          "interval_95_across_replications": [
+            0.7452948900317321,
+            0.9413229018492176
+          ],
+          "mean": 0.8633636065215013,
+          "median": 0.8743845059634534,
+          "monte_carlo_standard_error_of_mean": 0.005003352911106605
+        },
+        "top10_overlap": {
+          "interval_95_across_replications": [
+            0.6,
+            0.9
+          ],
+          "mean": 0.767,
+          "median": 0.8,
+          "monte_carlo_standard_error_of_mean": 0.008768054965543264
+        },
+        "top10_regret": {
+          "interval_95_across_replications": [
+            0.000488065682557387,
+            0.021432835950881135
+          ],
+          "mean": 0.0076742677313089295,
+          "median": 0.007148327429284007,
+          "monte_carlo_standard_error_of_mean": 0.0005393322200048163
+        }
+      },
+      "oracle_hajek": {
+        "absolute_mae": {
+          "interval_95_across_replications": [
+            0.01689335226159066,
+            0.027693027434075552
+          ],
+          "mean": 0.0218838158157605,
+          "median": 0.02145110551702757,
+          "monte_carlo_standard_error_of_mean": 0.0003103366472758294
+        },
+        "centered_mae": {
+          "interval_95_across_replications": [
+            0.016823032231154385,
+            0.027367862920690652
+          ],
+          "mean": 0.021688627905411432,
+          "median": 0.021323055307802187,
+          "monte_carlo_standard_error_of_mean": 0.0003136895097055385
+        },
+        "max_abs_error": {
+          "interval_95_across_replications": [
+            0.053323767179269635,
+            0.16835646978255528
+          ],
+          "mean": 0.09222613908742185,
+          "median": 0.08697039952115496,
+          "monte_carlo_standard_error_of_mean": 0.002998497804423724
+        },
+        "rank_corr": {
+          "interval_95_across_replications": [
+            0.7421380895065105,
+            0.9372579056789583
+          ],
+          "mean": 0.8626633110843636,
+          "median": 0.869898238319291,
+          "monte_carlo_standard_error_of_mean": 0.005041785962260046
+        },
+        "top10_overlap": {
+          "interval_95_across_replications": [
+            0.6,
+            0.9
+          ],
+          "mean": 0.77,
+          "median": 0.8,
+          "monte_carlo_standard_error_of_mean": 0.009045340337332912
+        },
+        "top10_regret": {
+          "interval_95_across_replications": [
+            0.0011878731511151374,
+            0.01817484344529376
+          ],
+          "mean": 0.007722386278254711,
+          "median": 0.0069095433308588305,
+          "monte_carlo_standard_error_of_mean": 0.0005268929532157414
+        }
+      },
+      "row_weighted_demean": {
+        "absolute_mae": {
+          "interval_95_across_replications": [
+            0.01201319481505636,
+            0.021925357430276262
+          ],
+          "mean": 0.016536844979893318,
+          "median": 0.016256573193599,
+          "monte_carlo_standard_error_of_mean": 0.00028422078120218395
+        },
+        "centered_mae": {
+          "interval_95_across_replications": [
+            0.011588013165554023,
+            0.021617469827431637
+          ],
+          "mean": 0.015934319477685376,
+          "median": 0.01563815573295564,
+          "monte_carlo_standard_error_of_mean": 0.000264709703144171
+        },
+        "max_abs_error": {
+          "interval_95_across_replications": [
+            0.044662999520264576,
+            0.1224273160951253
+          ],
+          "mean": 0.06992728233104369,
+          "median": 0.06613626190579144,
+          "monte_carlo_standard_error_of_mean": 0.002140795424047216
+        },
+        "rank_corr": {
+          "interval_95_across_replications": [
+            0.8452347083926031,
+            0.9629664077032498
+          ],
+          "mean": 0.912902943429259,
+          "median": 0.9134478608162818,
+          "monte_carlo_standard_error_of_mean": 0.0033627044128457435
+        },
+        "top10_overlap": {
+          "interval_95_across_replications": [
+            0.7,
+            0.9
+          ],
+          "mean": 0.8079999999999999,
+          "median": 0.8,
+          "monte_carlo_standard_error_of_mean": 0.007611793083064855
+        },
+        "top10_regret": {
+          "interval_95_across_replications": [
+            0.0003968354777042521,
+            0.011137658839834917
+          ],
+          "mean": 0.004720009491092243,
+          "median": 0.004329159355339007,
+          "monte_carlo_standard_error_of_mean": 0.00030484901493872424
+        }
+      },
+      "scalar_level_shift": {
+        "absolute_mae": {
+          "interval_95_across_replications": [
+            0.02444092445755467,
+            0.037495487772313894
+          ],
+          "mean": 0.0310728994919754,
+          "median": 0.031195438082091444,
+          "monte_carlo_standard_error_of_mean": 0.00035406689793080593
+        },
+        "centered_mae": {
+          "interval_95_across_replications": [
+            0.024440924457554664,
+            0.0374954877723139
+          ],
+          "mean": 0.0310728994919754,
+          "median": 0.031195438082091447,
+          "monte_carlo_standard_error_of_mean": 0.0003540668979308061
+        },
+        "max_abs_error": {
+          "interval_95_across_replications": [
+            0.06926835856562262,
+            0.1306133917574098
+          ],
+          "mean": 0.09150536973209258,
+          "median": 0.08735263352326886,
+          "monte_carlo_standard_error_of_mean": 0.0017175767936278281
+        },
+        "rank_corr": {
+          "interval_95_across_replications": [
+            0.6465641755115439,
+            0.8973848342269394
+          ],
+          "mean": 0.7986270388896436,
+          "median": 0.8032607506291717,
+          "monte_carlo_standard_error_of_mean": 0.006461710114784698
+        },
+        "top10_overlap": {
+          "interval_95_across_replications": [
+            0.5,
+            0.8524999999999991
+          ],
+          "mean": 0.695,
+          "median": 0.7,
+          "monte_carlo_standard_error_of_mean": 0.010087996667707459
+        },
+        "top10_regret": {
+          "interval_95_across_replications": [
+            0.004036340677056214,
+            0.02221474455241546
+          ],
+          "mean": 0.01134753274010301,
+          "median": 0.010198950793139594,
+          "monte_carlo_standard_error_of_mean": 0.0005590228339929939
+        }
+      }
+    },
+    "n_replications": 100
+  },
+  "minimum_items_per_category": 5,
+  "n_categories": 38,
+  "n_exposures_per_user": 60,
+  "n_items": 760,
+  "n_replications": 100,
+  "n_users_per_replication": 1000,
+  "oracle_anchor_warning": "scalar_level_shift, cell_equal_demean, and row_weighted_demean borrow the known target grand mean. They isolate shape behavior and are not deployable without exploration data for that anchor.",
+  "oracle_warning": "oracle_hajek uses the true simulated serving probabilities, which are unavailable in the released KuaiRand logs.",
+  "outcome": "Bernoulli engagement with known user-video probabilities",
+  "replication_interval_definition": "Each replication redraws the finite outcome/serving world and the realized logs. Reported 2.5--97.5 percentiles are across-world stress-test prediction intervals, not sampling confidence intervals for one fixed platform. MCSE describes the reported mean.",
+  "scenarios": {
+    "combined_weak_overlap": {
+      "definition": {
+        "description": "User, affinity, and video selection act together with weak overlap.",
+        "item_selection": 1.35,
+        "label": "combined_weak_overlap",
+        "outcome_interaction_scale": 0.045,
+        "uniform_overlap_floor": 0.02,
+        "user_category_selection": 1.0,
+        "user_level_selection": 1.0
+      },
+      "diagnostics": {
+        "importance_weight_category_ess_median": {
+          "interval_95_across_replications": [
+            57.70560804885437,
+            97.50213056720546
+          ],
+          "mean": 78.13656324115594,
+          "median": 78.0061075819917,
+          "monte_carlo_standard_error_of_mean": 1.0598404322271917
+        },
+        "importance_weight_category_ess_min": {
+          "interval_95_across_replications": [
+            2.0085728948358463,
+            19.469332505614624
+          ],
+          "mean": 8.694686243493246,
+          "median": 8.205275600681162,
+          "monte_carlo_standard_error_of_mean": 0.4824485556135496
+        },
+        "importance_weight_ess_fraction": {
+          "interval_95_across_replications": [
+            0.027952163857695157,
+            0.07608893884022758
+          ],
+          "mean": 0.05340868723128386,
+          "median": 0.05481486731152375,
+          "monte_carlo_standard_error_of_mean": 0.001238099007304363
+        },
+        "importance_weight_max": {
+          "interval_95_across_replications": [
+            181.19297699244157,
+            881.9093629888122
+          ],
+          "mean": 387.8244056797496,
+          "median": 341.7414238439827,
+          "monte_carlo_standard_error_of_mean": 16.71596909067733
+        },
+        "importance_weight_p99": {
+          "interval_95_across_replications": [
+            11.709685969961754,
+            13.471945573839486
+          ],
+          "mean": 12.533139464115616,
+          "median": 12.588383866501609,
+          "monte_carlo_standard_error_of_mean": 0.046145620249168226
+        },
+        "observed_user_category_cell_fraction": {
+          "interval_95_across_replications": [
+            0.41128157894736844,
+            0.4598473684210526
+          ],
+          "mean": 0.4402063157894736,
+          "median": 0.4422105263157895,
+          "monte_carlo_standard_error_of_mean": 0.0013040940469122733
+        }
+      },
+      "estimators": {
+        "cell_equal_demean": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.02246492294478843,
+              0.03450142894292669
+            ],
+            "mean": 0.028360729521011537,
+            "median": 0.02761775272338135,
+            "monte_carlo_standard_error_of_mean": 0.0003359110756413389
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.017035581675382657,
+              0.029177171324225225
+            ],
+            "mean": 0.023088610778172418,
+            "median": 0.02275463939769427,
+            "monte_carlo_standard_error_of_mean": 0.00029651942670826873
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.05961749917318875,
+              0.14195037538675356
+            ],
+            "mean": 0.08839782564754144,
+            "median": 0.08550850285634859,
+            "monte_carlo_standard_error_of_mean": 0.002181882993230535
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.7067129882919356,
+              0.9258343363606522
+            ],
+            "mean": 0.8368136557610241,
+            "median": 0.844512528723055,
+            "monte_carlo_standard_error_of_mean": 0.00560954214848186
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.5,
+              0.9
+            ],
+            "mean": 0.752,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.009997979593877755
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.001336757670467592,
+              0.020964652105048328
+            ],
+            "mean": 0.008726842913058183,
+            "median": 0.008266962703105618,
+            "monte_carlo_standard_error_of_mean": 0.0005194962946169197
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "naive": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.0685872909842492,
+              0.09460291474833253
+            ],
+            "mean": 0.08351737324719684,
+            "median": 0.08317335373812948,
+            "monte_carlo_standard_error_of_mean": 0.0006387099767052605
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.027336250068691267,
+              0.04115543974394016
+            ],
+            "mean": 0.03332894501011539,
+            "median": 0.033164097996488895,
+            "monte_carlo_standard_error_of_mean": 0.0003579621737796331
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.1381595826381416,
+              0.22072826603409038
+            ],
+            "mean": 0.17053323476613536,
+            "median": 0.1696375469733238,
+            "monte_carlo_standard_error_of_mean": 0.002130439182591593
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.6024619761461867,
+              0.8704125177809386
+            ],
+            "mean": 0.7507420323385142,
+            "median": 0.7507385928438559,
+            "monte_carlo_standard_error_of_mean": 0.007179095203275751
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.5,
+              0.9
+            ],
+            "mean": 0.6759999999999999,
+            "median": 0.7,
+            "monte_carlo_standard_error_of_mean": 0.011469767022723502
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.002580692899982448,
+              0.031107616029148966
+            ],
+            "mean": 0.013811820958254319,
+            "median": 0.012239055326077941,
+            "monte_carlo_standard_error_of_mean": 0.0007279390801118517
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "oracle_dm_hajek": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.037939363925034796,
+              0.06808265474071694
+            ],
+            "mean": 0.050920649256667554,
+            "median": 0.050804358957447095,
+            "monte_carlo_standard_error_of_mean": 0.0007999081348460162
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.0378631394892084,
+              0.06707919042398296
+            ],
+            "mean": 0.05073558149106474,
+            "median": 0.050763199736061096,
+            "monte_carlo_standard_error_of_mean": 0.0008131879149099998
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.12486068848100909,
+              0.40524092404060535
+            ],
+            "mean": 0.21781708702640085,
+            "median": 0.20585822251260455,
+            "monte_carlo_standard_error_of_mean": 0.007289332444145394
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.38726884779516363,
+              0.7813765182186233
+            ],
+            "mean": 0.609103840682788,
+            "median": 0.6280774701827333,
+            "monte_carlo_standard_error_of_mean": 0.010840186144775929
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.3,
+              0.8
+            ],
+            "mean": 0.5640000000000001,
+            "median": 0.6,
+            "monte_carlo_standard_error_of_mean": 0.012674638639679816
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.008964417264965696,
+              0.049181867925991225
+            ],
+            "mean": 0.023857678811911264,
+            "median": 0.021818030432864566,
+            "monte_carlo_standard_error_of_mean": 0.00104055282287006
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "oracle_hajek": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.041173463043817235,
+              0.06973939387134166
+            ],
+            "mean": 0.052407055736350905,
+            "median": 0.05106180725117085,
+            "monte_carlo_standard_error_of_mean": 0.0007947998051392065
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.03963485597415345,
+              0.06823388562424469
+            ],
+            "mean": 0.05219887027631892,
+            "median": 0.051098551148543295,
+            "monte_carlo_standard_error_of_mean": 0.0007964558692524912
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.1220114285799171,
+              0.37549215479934495
+            ],
+            "mean": 0.22190213816908563,
+            "median": 0.21039629219232264,
+            "monte_carlo_standard_error_of_mean": 0.006209835727204051
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.3841558157347631,
+              0.7891508917824707
+            ],
+            "mean": 0.6018667250246197,
+            "median": 0.6145092460881934,
+            "monte_carlo_standard_error_of_mean": 0.010623126668222752
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.3,
+              0.8
+            ],
+            "mean": 0.569,
+            "median": 0.6,
+            "monte_carlo_standard_error_of_mean": 0.012366049972371607
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.008240208009620944,
+              0.04553404118847441
+            ],
+            "mean": 0.023281714281918085,
+            "median": 0.021461277284776314,
+            "monte_carlo_standard_error_of_mean": 0.0009978205266321504
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "row_weighted_demean": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.015398963909871444,
+              0.026683566515896574
+            ],
+            "mean": 0.020905747205037916,
+            "median": 0.020980782869506047,
+            "monte_carlo_standard_error_of_mean": 0.00029234695843201124
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.015495214781199505,
+              0.02651519530139738
+            ],
+            "mean": 0.020720820438694606,
+            "median": 0.020785932673230062,
+            "monte_carlo_standard_error_of_mean": 0.00028545881400373973
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.05057010992237204,
+              0.13710392395898122
+            ],
+            "mean": 0.07984268249694312,
+            "median": 0.07454695296804928,
+            "monte_carlo_standard_error_of_mean": 0.002331697523095853
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.7171298829193565,
+              0.9261461866725025
+            ],
+            "mean": 0.8497056570740782,
+            "median": 0.8545792756319072,
+            "monte_carlo_standard_error_of_mean": 0.005223466406401311
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6,
+              0.9
+            ],
+            "mean": 0.757,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.00843932593411478
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.0014076058347573556,
+              0.01689829802471643
+            ],
+            "mean": 0.0077428287281417,
+            "median": 0.0066018163293685705,
+            "monte_carlo_standard_error_of_mean": 0.0004740246642653366
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "scalar_level_shift": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.02733625006869126,
+              0.04115543974394016
+            ],
+            "mean": 0.03332894501011539,
+            "median": 0.033164097996488895,
+            "monte_carlo_standard_error_of_mean": 0.00035796217377963296
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.027336250068691264,
+              0.04115543974394016
+            ],
+            "mean": 0.03332894501011539,
+            "median": 0.033164097996488895,
+            "monte_carlo_standard_error_of_mean": 0.00035796217377963307
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.07147675753027921,
+              0.1492747021626439
+            ],
+            "mean": 0.10751560698037134,
+            "median": 0.1051069634704174,
+            "monte_carlo_standard_error_of_mean": 0.002133851136104279
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.6024619761461867,
+              0.8704125177809386
+            ],
+            "mean": 0.7507420323385142,
+            "median": 0.7507385928438559,
+            "monte_carlo_standard_error_of_mean": 0.007179095203275751
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.5,
+              0.9
+            ],
+            "mean": 0.6759999999999999,
+            "median": 0.7,
+            "monte_carlo_standard_error_of_mean": 0.011469767022723502
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.002580692899982448,
+              0.031107616029148966
+            ],
+            "mean": 0.013811820958254319,
+            "median": 0.012239055326077941,
+            "monte_carlo_standard_error_of_mean": 0.0007279390801118517
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        }
+      }
+    },
+    "target_like": {
+      "definition": {
+        "description": "Serving equals the target user and within-category video mixture.",
+        "item_selection": 0.0,
+        "label": "target_like",
+        "outcome_interaction_scale": 0.0,
+        "uniform_overlap_floor": 1.0,
+        "user_category_selection": 0.0,
+        "user_level_selection": 0.0
+      },
+      "diagnostics": {
+        "importance_weight_category_ess_median": {
+          "interval_95_across_replications": [
+            893.925,
+            967.125
+          ],
+          "mean": 933.095,
+          "median": 934.5,
+          "monte_carlo_standard_error_of_mean": 1.8849442694652538
+        },
+        "importance_weight_category_ess_min": {
+          "interval_95_across_replications": [
+            72.0,
+            114.04999999999998
+          ],
+          "mean": 89.63,
+          "median": 88.5,
+          "monte_carlo_standard_error_of_mean": 1.0552088213077335
+        },
+        "importance_weight_ess_fraction": {
+          "interval_95_across_replications": [
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "median": 1.0,
+          "monte_carlo_standard_error_of_mean": 0.0
+        },
+        "importance_weight_max": {
+          "interval_95_across_replications": [
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "median": 1.0,
+          "monte_carlo_standard_error_of_mean": 0.0
+        },
+        "importance_weight_p99": {
+          "interval_95_across_replications": [
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "median": 1.0,
+          "monte_carlo_standard_error_of_mean": 0.0
+        },
+        "observed_user_category_cell_fraction": {
+          "interval_95_across_replications": [
+            0.5870684210526316,
+            0.5937598684210527
+          ],
+          "mean": 0.5906378947368421,
+          "median": 0.5907631578947369,
+          "monte_carlo_standard_error_of_mean": 0.00016960934469472183
+        }
+      },
+      "estimators": {
+        "cell_equal_demean": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.012143764674480225,
+              0.01957061617070488
+            ],
+            "mean": 0.015576857978535714,
+            "median": 0.015613141706623607,
+            "monte_carlo_standard_error_of_mean": 0.00020947729641443758
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.01218790810876793,
+              0.01959976714912052
+            ],
+            "mean": 0.01554961588883787,
+            "median": 0.015642236577277174,
+            "monte_carlo_standard_error_of_mean": 0.00020674106265187588
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.03636685280056308,
+              0.10917591561493849
+            ],
+            "mean": 0.06374761293714527,
+            "median": 0.06236418349562364,
+            "monte_carlo_standard_error_of_mean": 0.0018072242874140228
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.845054163475216,
+              0.962298938614728
+            ],
+            "mean": 0.9130211182842761,
+            "median": 0.9161833898676004,
+            "monte_carlo_standard_error_of_mean": 0.00341980074288836
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6475,
+              1.0
+            ],
+            "mean": 0.8270000000000001,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.008859737552261328
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.0,
+              0.010228331047973173
+            ],
+            "mean": 0.004326467378305074,
+            "median": 0.004120454948995128,
+            "monte_carlo_standard_error_of_mean": 0.0003150056487475236
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "naive": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.011437864480433888,
+              0.018936076196152275
+            ],
+            "mean": 0.01476517288143743,
+            "median": 0.014697174451809776,
+            "monte_carlo_standard_error_of_mean": 0.0001990374749598079
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.011419321577658575,
+              0.018995596799825935
+            ],
+            "mean": 0.014619536305749983,
+            "median": 0.014597550974519891,
+            "monte_carlo_standard_error_of_mean": 0.00019835195781773364
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.03748813060870949,
+              0.10012474025782331
+            ],
+            "mean": 0.06258538671716866,
+            "median": 0.0590364967205331,
+            "monte_carlo_standard_error_of_mean": 0.001794496411720212
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.8513677645256592,
+              0.9658337219311954
+            ],
+            "mean": 0.9207456185427909,
+            "median": 0.926031294452347,
+            "monte_carlo_standard_error_of_mean": 0.003062632189618516
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6475,
+              1.0
+            ],
+            "mean": 0.8300000000000002,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.008932971498777986
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.0,
+              0.01095496288367171
+            ],
+            "mean": 0.004100439437660492,
+            "median": 0.0037073038509448653,
+            "monte_carlo_standard_error_of_mean": 0.00031056914422896255
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "oracle_dm_hajek": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.011107640008885006,
+              0.01896501415685219
+            ],
+            "mean": 0.01459755620963095,
+            "median": 0.014409020261296436,
+            "monte_carlo_standard_error_of_mean": 0.00020563123851680804
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.010971268957642654,
+              0.01905485260782312
+            ],
+            "mean": 0.014465357338494118,
+            "median": 0.014440123247361315,
+            "monte_carlo_standard_error_of_mean": 0.00020488266277339848
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.03610728645756945,
+              0.10555390409727088
+            ],
+            "mean": 0.06176454400280448,
+            "median": 0.05852506995021359,
+            "monte_carlo_standard_error_of_mean": 0.0018254261794311368
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.8388992231097494,
+              0.9666429587482219
+            ],
+            "mean": 0.9217485501696027,
+            "median": 0.9278914542072436,
+            "monte_carlo_standard_error_of_mean": 0.0032324603649809777
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6475,
+              1.0
+            ],
+            "mean": 0.8320000000000001,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.008513803408867772
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.0,
+              0.01086923149155186
+            ],
+            "mean": 0.00418765941446021,
+            "median": 0.004005423933635455,
+            "monte_carlo_standard_error_of_mean": 0.00030413023632804226
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "oracle_hajek": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.011437864480433888,
+              0.018936076196152275
+            ],
+            "mean": 0.01476517288143743,
+            "median": 0.014697174451809776,
+            "monte_carlo_standard_error_of_mean": 0.0001990374749598079
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.011419321577658575,
+              0.018995596799825935
+            ],
+            "mean": 0.014619536305749983,
+            "median": 0.014597550974519891,
+            "monte_carlo_standard_error_of_mean": 0.00019835195781773364
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.03748813060870949,
+              0.10012474025782331
+            ],
+            "mean": 0.06258538671716866,
+            "median": 0.0590364967205331,
+            "monte_carlo_standard_error_of_mean": 0.001794496411720212
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.8513677645256592,
+              0.9658337219311954
+            ],
+            "mean": 0.9207456185427909,
+            "median": 0.926031294452347,
+            "monte_carlo_standard_error_of_mean": 0.003062632189618516
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6475,
+              1.0
+            ],
+            "mean": 0.8300000000000002,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.008932971498777986
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.0,
+              0.01095496288367171
+            ],
+            "mean": 0.004100439437660492,
+            "median": 0.0037073038509448653,
+            "monte_carlo_standard_error_of_mean": 0.00031056914422896255
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "row_weighted_demean": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.01128655630708418,
+              0.01869588493245763
+            ],
+            "mean": 0.014419719084766776,
+            "median": 0.014396890808632186,
+            "monte_carlo_standard_error_of_mean": 0.00019924211427804197
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.011295900015442402,
+              0.01867442169330797
+            ],
+            "mean": 0.014414694423019696,
+            "median": 0.014415716539709947,
+            "monte_carlo_standard_error_of_mean": 0.000199296689136329
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.034877956928411884,
+              0.0980368449671105
+            ],
+            "mean": 0.0613218817941499,
+            "median": 0.058604551619167555,
+            "monte_carlo_standard_error_of_mean": 0.001747037211138906
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.8432705985337564,
+              0.96796695480906
+            ],
+            "mean": 0.9207046722836197,
+            "median": 0.9261407156143997,
+            "monte_carlo_standard_error_of_mean": 0.0031981612552657995
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.7,
+              1.0
+            ],
+            "mean": 0.8320000000000001,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.009307323064461803
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.0,
+              0.010614206898364384
+            ],
+            "mean": 0.003937262989196655,
+            "median": 0.0035525222953806113,
+            "monte_carlo_standard_error_of_mean": 0.0002974936547866146
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "scalar_level_shift": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.011419321577658568,
+              0.018995596799825935
+            ],
+            "mean": 0.014619536305749983,
+            "median": 0.014597550974519893,
+            "monte_carlo_standard_error_of_mean": 0.00019835195781773367
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.011419321577658575,
+              0.018995596799825935
+            ],
+            "mean": 0.014619536305749983,
+            "median": 0.014597550974519891,
+            "monte_carlo_standard_error_of_mean": 0.00019835195781773364
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.03703495128324194,
+              0.10009541034323247
+            ],
+            "mean": 0.06257303716711773,
+            "median": 0.05881167013121563,
+            "monte_carlo_standard_error_of_mean": 0.0018155409733543939
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.8513677645256592,
+              0.9658337219311954
+            ],
+            "mean": 0.9207456185427909,
+            "median": 0.926031294452347,
+            "monte_carlo_standard_error_of_mean": 0.003062632189618516
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6475,
+              1.0
+            ],
+            "mean": 0.8300000000000002,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.008932971498777986
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.0,
+              0.01095496288367171
+            ],
+            "mean": 0.004100439437660492,
+            "median": 0.0037073038509448653,
+            "monte_carlo_standard_error_of_mean": 0.00031056914422896255
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        }
+      }
+    },
+    "user_category_interaction": {
+      "definition": {
+        "description": "Serving selects user-category affinities that also enter outcomes.",
+        "item_selection": 0.0,
+        "label": "user_category_interaction",
+        "outcome_interaction_scale": 0.045,
+        "uniform_overlap_floor": 0.1,
+        "user_category_selection": 1.1,
+        "user_level_selection": 0.6
+      },
+      "diagnostics": {
+        "importance_weight_category_ess_median": {
+          "interval_95_across_replications": [
+            348.0095839692684,
+            414.63177074771596
+          ],
+          "mean": 382.4770745321233,
+          "median": 383.449648288989,
+          "monte_carlo_standard_error_of_mean": 1.7948027121387706
+        },
+        "importance_weight_category_ess_min": {
+          "interval_95_across_replications": [
+            28.312260478686156,
+            52.54240528637198
+          ],
+          "mean": 38.79867648829529,
+          "median": 39.02947901284689,
+          "monte_carlo_standard_error_of_mean": 0.6275414055725759
+        },
+        "importance_weight_ess_fraction": {
+          "interval_95_across_replications": [
+            0.40015056886530903,
+            0.4425831157511909
+          ],
+          "mean": 0.4226925459480952,
+          "median": 0.42388319485783826,
+          "monte_carlo_standard_error_of_mean": 0.0011547885592325135
+        },
+        "importance_weight_max": {
+          "interval_95_across_replications": [
+            9.544184123491293,
+            9.97577867454447
+          ],
+          "mean": 9.821005122860553,
+          "median": 9.848090021023584,
+          "monte_carlo_standard_error_of_mean": 0.011295661642191191
+        },
+        "importance_weight_p99": {
+          "interval_95_across_replications": [
+            5.6158766816164265,
+            6.350920075694369
+          ],
+          "mean": 5.966358524865924,
+          "median": 5.952891609203502,
+          "monte_carlo_standard_error_of_mean": 0.01911988658115593
+        },
+        "observed_user_category_cell_fraction": {
+          "interval_95_across_replications": [
+            0.46975526315789473,
+            0.49144802631578943
+          ],
+          "mean": 0.4799807894736843,
+          "median": 0.48055263157894734,
+          "monte_carlo_standard_error_of_mean": 0.000573727233924144
+        }
+      },
+      "estimators": {
+        "cell_equal_demean": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.019458363249749012,
+              0.028764628059068226
+            ],
+            "mean": 0.023489768185637274,
+            "median": 0.023417894226545756,
+            "monte_carlo_standard_error_of_mean": 0.0002524155662765573
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.01582390007806196,
+              0.02324642403078262
+            ],
+            "mean": 0.019585547940599718,
+            "median": 0.019825962164585723,
+            "monte_carlo_standard_error_of_mean": 0.000226718464964684
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.04802500278227377,
+              0.11870904542091178
+            ],
+            "mean": 0.07018700698114949,
+            "median": 0.06494978939435997,
+            "monte_carlo_standard_error_of_mean": 0.0018462254831872395
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.809842433526644,
+              0.9448462632673158
+            ],
+            "mean": 0.884632892001313,
+            "median": 0.8924389977021556,
+            "monte_carlo_standard_error_of_mean": 0.003943706827849121
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6,
+              0.9
+            ],
+            "mean": 0.77,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.009587449708822048
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.0008331096119181785,
+              0.016260377623260897
+            ],
+            "mean": 0.006827789664041497,
+            "median": 0.006693722041713479,
+            "monte_carlo_standard_error_of_mean": 0.0004065377862794856
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "naive": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.035354669882102556,
+              0.049900658403318705
+            ],
+            "mean": 0.04234297518922661,
+            "median": 0.042428253276027485,
+            "monte_carlo_standard_error_of_mean": 0.0004013257342476382
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.02011721677170169,
+              0.0286932956867432
+            ],
+            "mean": 0.024749529862612515,
+            "median": 0.024628159596216052,
+            "monte_carlo_standard_error_of_mean": 0.00025426058602993066
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.08149284138662888,
+              0.1505801560261509
+            ],
+            "mean": 0.10875793373230624,
+            "median": 0.10560288843752336,
+            "monte_carlo_standard_error_of_mean": 0.0018384113778156543
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.7399387241492505,
+              0.9236616742362364
+            ],
+            "mean": 0.8402888524105611,
+            "median": 0.8456067403435825,
+            "monte_carlo_standard_error_of_mean": 0.0053821107428432165
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6,
+              0.9
+            ],
+            "mean": 0.7349999999999999,
+            "median": 0.7,
+            "monte_carlo_standard_error_of_mean": 0.009468181696950302
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.001501967301649365,
+              0.022805292865206717
+            ],
+            "mean": 0.008659011154308878,
+            "median": 0.008087501720955237,
+            "monte_carlo_standard_error_of_mean": 0.000517769261398443
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "oracle_dm_hajek": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.015970063711095776,
+              0.02904447059827189
+            ],
+            "mean": 0.022276688372354064,
+            "median": 0.022138179824601863,
+            "monte_carlo_standard_error_of_mean": 0.0003203649376921475
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.016225692967719352,
+              0.02868644736953093
+            ],
+            "mean": 0.02208568308062418,
+            "median": 0.021827651843580737,
+            "monte_carlo_standard_error_of_mean": 0.0003219245089171034
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.059351601699512375,
+              0.1837060080565362
+            ],
+            "mean": 0.10001786951299219,
+            "median": 0.09531501817768365,
+            "monte_carlo_standard_error_of_mean": 0.0029501988531550672
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.7212277054382318,
+              0.9405405405405404
+            ],
+            "mean": 0.8467490972754128,
+            "median": 0.8581901739796478,
+            "monte_carlo_standard_error_of_mean": 0.006081178575496125
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6,
+              0.9524999999999991
+            ],
+            "mean": 0.7669999999999999,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.010254833794928916
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.00017588793881779255,
+              0.02033030933567588
+            ],
+            "mean": 0.008092024971956184,
+            "median": 0.007021724189687439,
+            "monte_carlo_standard_error_of_mean": 0.0005092497445763559
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "oracle_hajek": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.01644577468293508,
+              0.029737740805015126
+            ],
+            "mean": 0.022830903789162305,
+            "median": 0.022623883822645425,
+            "monte_carlo_standard_error_of_mean": 0.0003368272479579079
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.016268651356244918,
+              0.02935297999013711
+            ],
+            "mean": 0.02262792663636253,
+            "median": 0.022428769410675363,
+            "monte_carlo_standard_error_of_mean": 0.00034011266009511447
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.0612152107291446,
+              0.1846270469065404
+            ],
+            "mean": 0.10142322987154957,
+            "median": 0.09706518115124779,
+            "monte_carlo_standard_error_of_mean": 0.0029316684661706846
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.7089944195207353,
+              0.9374658058868585
+            ],
+            "mean": 0.8426523689681583,
+            "median": 0.8494364810154285,
+            "monte_carlo_standard_error_of_mean": 0.006026145059305563
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6,
+              0.9
+            ],
+            "mean": 0.759,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.010356767172367366
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.0008042179527812693,
+              0.019874144510464778
+            ],
+            "mean": 0.008241254560959458,
+            "median": 0.007311870981668078,
+            "monte_carlo_standard_error_of_mean": 0.0005064797750192051
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "row_weighted_demean": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.01153902363775168,
+              0.01846104713853859
+            ],
+            "mean": 0.015153307707675425,
+            "median": 0.015097305471047979,
+            "monte_carlo_standard_error_of_mean": 0.00018503136286686912
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.011729705999086602,
+              0.018405987892917475
+            ],
+            "mean": 0.01510582567857201,
+            "median": 0.01482878132467048,
+            "monte_carlo_standard_error_of_mean": 0.00018102244231246685
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.0375903199579669,
+              0.1038261663818135
+            ],
+            "mean": 0.06322006899177296,
+            "median": 0.06109600513659419,
+            "monte_carlo_standard_error_of_mean": 0.001822028214906878
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.8478936426304847,
+              0.9624740124740123
+            ],
+            "mean": 0.911261625998468,
+            "median": 0.9162928110296531,
+            "monte_carlo_standard_error_of_mean": 0.0030577193990762213
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6,
+              1.0
+            ],
+            "mean": 0.8050000000000002,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.009574271077563385
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              1.1102230246251565e-16,
+              0.013769446329711225
+            ],
+            "mean": 0.004744321719060888,
+            "median": 0.003826791329111179,
+            "monte_carlo_standard_error_of_mean": 0.0003646053537388761
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "scalar_level_shift": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.020117216771701696,
+              0.028693295686743198
+            ],
+            "mean": 0.02474952986261251,
+            "median": 0.024628159596216052,
+            "monte_carlo_standard_error_of_mean": 0.00025426058602993033
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.02011721677170169,
+              0.028693295686743198
+            ],
+            "mean": 0.024749529862612515,
+            "median": 0.024628159596216052,
+            "monte_carlo_standard_error_of_mean": 0.00025426058602993055
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.05410549315813007,
+              0.11605016311342892
+            ],
+            "mean": 0.07873517293326268,
+            "median": 0.0756793608766134,
+            "monte_carlo_standard_error_of_mean": 0.0016697872458823419
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.7399387241492505,
+              0.9236616742362364
+            ],
+            "mean": 0.8402888524105611,
+            "median": 0.8456067403435825,
+            "monte_carlo_standard_error_of_mean": 0.0053821107428432165
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6,
+              0.9
+            ],
+            "mean": 0.7349999999999999,
+            "median": 0.7,
+            "monte_carlo_standard_error_of_mean": 0.009468181696950302
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.001501967301649365,
+              0.022805292865206717
+            ],
+            "mean": 0.008659011154308878,
+            "median": 0.008087501720955237,
+            "monte_carlo_standard_error_of_mean": 0.000517769261398443
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        }
+      }
+    },
+    "user_composition": {
+      "definition": {
+        "description": "Category exposure selects on a user-level outcome term that is additive on the logit scale.",
+        "item_selection": 0.0,
+        "label": "user_composition",
+        "outcome_interaction_scale": 0.0,
+        "uniform_overlap_floor": 0.1,
+        "user_category_selection": 0.0,
+        "user_level_selection": 1.25
+      },
+      "diagnostics": {
+        "importance_weight_category_ess_median": {
+          "interval_95_across_replications": [
+            336.2542219723344,
+            480.14177126228793
+          ],
+          "mean": 404.58783910777777,
+          "median": 398.7182141149369,
+          "monte_carlo_standard_error_of_mean": 3.82448868513261
+        },
+        "importance_weight_category_ess_min": {
+          "interval_95_across_replications": [
+            27.852484509676522,
+            63.69631617228455
+          ],
+          "mean": 44.37568489730324,
+          "median": 44.17949280358602,
+          "monte_carlo_standard_error_of_mean": 0.9653992930516768
+        },
+        "importance_weight_ess_fraction": {
+          "interval_95_across_replications": [
+            0.36268817556965244,
+            0.5471284285374854
+          ],
+          "mean": 0.4511428923295312,
+          "median": 0.45128543972985147,
+          "monte_carlo_standard_error_of_mean": 0.0044530118895827085
+        },
+        "importance_weight_max": {
+          "interval_95_across_replications": [
+            9.97558761338214,
+            9.999921850775495
+          ],
+          "mean": 9.992554778458578,
+          "median": 9.995699948764143,
+          "monte_carlo_standard_error_of_mean": 0.0013069786387270147
+        },
+        "importance_weight_p99": {
+          "interval_95_across_replications": [
+            5.077975540108341,
+            8.197207292907025
+          ],
+          "mean": 6.574782257689004,
+          "median": 6.580278737784798,
+          "monte_carlo_standard_error_of_mean": 0.0773853374938488
+        },
+        "observed_user_category_cell_fraction": {
+          "interval_95_across_replications": [
+            0.4556125,
+            0.5401657894736842
+          ],
+          "mean": 0.5008205263157894,
+          "median": 0.502092105263158,
+          "monte_carlo_standard_error_of_mean": 0.0021576727813393576
+        }
+      },
+      "estimators": {
+        "cell_equal_demean": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.01421051154009657,
+              0.022245967346692673
+            ],
+            "mean": 0.017611277290881175,
+            "median": 0.017585913642838392,
+            "monte_carlo_standard_error_of_mean": 0.0002499660321053759
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.013722450694680394,
+              0.02202012791729884
+            ],
+            "mean": 0.01707365937416078,
+            "median": 0.016818697704203134,
+            "monte_carlo_standard_error_of_mean": 0.00022996219695493885
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.044073231340294464,
+              0.14212053821480852
+            ],
+            "mean": 0.07333958905203516,
+            "median": 0.06823728352779598,
+            "monte_carlo_standard_error_of_mean": 0.0025619700869561743
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.7765948134369187,
+              0.9511981617244775
+            ],
+            "mean": 0.893896487580698,
+            "median": 0.9045847466900099,
+            "monte_carlo_standard_error_of_mean": 0.0045393345142614085
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6,
+              0.9
+            ],
+            "mean": 0.8099999999999998,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.008348471099367219
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              9.838644955632304e-05,
+              0.016471834138571145
+            ],
+            "mean": 0.00522507207458694,
+            "median": 0.004241866351489043,
+            "monte_carlo_standard_error_of_mean": 0.0004061329094186911
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "naive": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.023731656453357796,
+              0.03568459931855258
+            ],
+            "mean": 0.029754645100821327,
+            "median": 0.02990100563218842,
+            "monte_carlo_standard_error_of_mean": 0.0003548113975472756
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.023743304143437144,
+              0.03576220030464509
+            ],
+            "mean": 0.029662570442122997,
+            "median": 0.02991563908795517,
+            "monte_carlo_standard_error_of_mean": 0.00036028846838729797
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.06459831265205543,
+              0.15860204387347523
+            ],
+            "mean": 0.08976029285201138,
+            "median": 0.0853032654348661,
+            "monte_carlo_standard_error_of_mean": 0.0023506031046380636
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.619881825144983,
+              0.8985775248933143
+            ],
+            "mean": 0.7859274299024384,
+            "median": 0.8017288543604333,
+            "monte_carlo_standard_error_of_mean": 0.0076067781590475215
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.4,
+              0.9
+            ],
+            "mean": 0.6779999999999999,
+            "median": 0.7,
+            "monte_carlo_standard_error_of_mean": 0.012837759960681646
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.002173119739340193,
+              0.025432335495014242
+            ],
+            "mean": 0.012119076072310163,
+            "median": 0.011929888295381719,
+            "monte_carlo_standard_error_of_mean": 0.0006390359356509189
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "oracle_dm_hajek": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.016889422881822647,
+              0.02689869829265814
+            ],
+            "mean": 0.021636411691975416,
+            "median": 0.02164784324964841,
+            "monte_carlo_standard_error_of_mean": 0.0002780631063714885
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.016667599433026557,
+              0.026995815987475053
+            ],
+            "mean": 0.021442764457617107,
+            "median": 0.021356252638271768,
+            "monte_carlo_standard_error_of_mean": 0.00028026267343647757
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.056160496692323876,
+              0.1818787190729973
+            ],
+            "mean": 0.09768143281020693,
+            "median": 0.08670019356465353,
+            "monte_carlo_standard_error_of_mean": 0.0033464593453505767
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.7323503665608929,
+              0.9319947477842214
+            ],
+            "mean": 0.8497800634642739,
+            "median": 0.8644271802166539,
+            "monte_carlo_standard_error_of_mean": 0.005484299286476302
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.5,
+              0.9524999999999991
+            ],
+            "mean": 0.762,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.011439785263224433
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              5.9518966379790164e-05,
+              0.019041715434518384
+            ],
+            "mean": 0.007560153379268376,
+            "median": 0.0065656214886099795,
+            "monte_carlo_standard_error_of_mean": 0.0005173180980736532
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "oracle_hajek": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.017238698274197904,
+              0.027756904010995665
+            ],
+            "mean": 0.021825489862167938,
+            "median": 0.021642234293698694,
+            "monte_carlo_standard_error_of_mean": 0.00028236064228998254
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.01695807632651407,
+              0.02777761882039439
+            ],
+            "mean": 0.02164079303095226,
+            "median": 0.02154563547462321,
+            "monte_carlo_standard_error_of_mean": 0.0002853598722397571
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.05520647562848404,
+              0.189774446700353
+            ],
+            "mean": 0.10036815986405447,
+            "median": 0.09091947709677242,
+            "monte_carlo_standard_error_of_mean": 0.0035016862020347964
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.7222398511872196,
+              0.9364153627311521
+            ],
+            "mean": 0.846703140387351,
+            "median": 0.8534850640113798,
+            "monte_carlo_standard_error_of_mean": 0.005499410703072463
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.5,
+              0.9524999999999991
+            ],
+            "mean": 0.762,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.011615037275406864
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              4.454555291397156e-06,
+              0.020210861778097534
+            ],
+            "mean": 0.0077973276708637905,
+            "median": 0.006644498559532808,
+            "monte_carlo_standard_error_of_mean": 0.0005288337612662393
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "row_weighted_demean": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.011977703869527465,
+              0.022024946754526754
+            ],
+            "mean": 0.016768697330225565,
+            "median": 0.016356649237641168,
+            "monte_carlo_standard_error_of_mean": 0.0002585311779449991
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.011968996871897763,
+              0.02131116133790785
+            ],
+            "mean": 0.01625030503371091,
+            "median": 0.016025352260841525,
+            "monte_carlo_standard_error_of_mean": 0.00024441233362971983
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.039996488310275954,
+              0.13997196628878494
+            ],
+            "mean": 0.06981832337260903,
+            "median": 0.06392289110573995,
+            "monte_carlo_standard_error_of_mean": 0.002558419639549686
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.810159754896597,
+              0.9524072655651603
+            ],
+            "mean": 0.9017135353977459,
+            "median": 0.907867381551592,
+            "monte_carlo_standard_error_of_mean": 0.003988209331864837
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6,
+              1.0
+            ],
+            "mean": 0.8030000000000002,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.009893881386437223
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.0,
+              0.01610735816769075
+            ],
+            "mean": 0.005313902982018567,
+            "median": 0.00427192003172705,
+            "monte_carlo_standard_error_of_mean": 0.0004281953529056342
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "scalar_level_shift": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.023743304143437147,
+              0.03576220030464508
+            ],
+            "mean": 0.029662570442123,
+            "median": 0.02991563908795518,
+            "monte_carlo_standard_error_of_mean": 0.000360288468387298
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.023743304143437144,
+              0.03576220030464509
+            ],
+            "mean": 0.029662570442122997,
+            "median": 0.029915639087955175,
+            "monte_carlo_standard_error_of_mean": 0.000360288468387298
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.06596930096132071,
+              0.16029128719860097
+            ],
+            "mean": 0.09065956161703669,
+            "median": 0.08444426642898906,
+            "monte_carlo_standard_error_of_mean": 0.002360543469603512
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.619881825144983,
+              0.8985775248933143
+            ],
+            "mean": 0.7859274299024384,
+            "median": 0.8017288543604333,
+            "monte_carlo_standard_error_of_mean": 0.0076067781590475215
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.4,
+              0.9
+            ],
+            "mean": 0.6779999999999999,
+            "median": 0.7,
+            "monte_carlo_standard_error_of_mean": 0.012837759960681646
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.002173119739340193,
+              0.025432335495014242
+            ],
+            "mean": 0.012119076072310163,
+            "median": 0.011929888295381719,
+            "monte_carlo_standard_error_of_mean": 0.0006390359356509189
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        }
+      }
+    },
+    "within_category_item_mix": {
+      "definition": {
+        "description": "Serving favors high-outcome videos within each category.",
+        "item_selection": 1.5,
+        "label": "within_category_item_mix",
+        "outcome_interaction_scale": 0.0,
+        "uniform_overlap_floor": 0.1,
+        "user_category_selection": 0.0,
+        "user_level_selection": 0.0
+      },
+      "diagnostics": {
+        "importance_weight_category_ess_median": {
+          "interval_95_across_replications": [
+            264.4899232764259,
+            382.8508489834174
+          ],
+          "mean": 321.22587012924856,
+          "median": 319.58147876280935,
+          "monte_carlo_standard_error_of_mean": 3.3609674704621284
+        },
+        "importance_weight_category_ess_min": {
+          "interval_95_across_replications": [
+            15.733865634142425,
+            66.31331144363548
+          ],
+          "mean": 39.29265705381523,
+          "median": 38.05462182926126,
+          "monte_carlo_standard_error_of_mean": 1.3360445824355622
+        },
+        "importance_weight_ess_fraction": {
+          "interval_95_across_replications": [
+            0.30607228025638233,
+            0.3598095876139199
+          ],
+          "mean": 0.3324803171130412,
+          "median": 0.3314384814153788,
+          "monte_carlo_standard_error_of_mean": 0.0014229955946263627
+        },
+        "importance_weight_max": {
+          "interval_95_across_replications": [
+            9.414606794122328,
+            9.921131165200734
+          ],
+          "mean": 9.724981268064903,
+          "median": 9.756025911138625,
+          "monte_carlo_standard_error_of_mean": 0.013770347571575709
+        },
+        "importance_weight_p99": {
+          "interval_95_across_replications": [
+            6.7503067847776235,
+            7.629877281442682
+          ],
+          "mean": 7.242379857147934,
+          "median": 7.266325026108622,
+          "monte_carlo_standard_error_of_mean": 0.024562731440767496
+        },
+        "observed_user_category_cell_fraction": {
+          "interval_95_across_replications": [
+            0.5864065789473685,
+            0.5930026315789474
+          ],
+          "mean": 0.5901373684210526,
+          "median": 0.5902499999999999,
+          "monte_carlo_standard_error_of_mean": 0.000177477222398218
+        }
+      },
+      "estimators": {
+        "cell_equal_demean": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.017086437339885848,
+              0.02662448125256273
+            ],
+            "mean": 0.022064658157207758,
+            "median": 0.022055793406469827,
+            "monte_carlo_standard_error_of_mean": 0.00025168955485342637
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.017074292617768137,
+              0.026514049185306966
+            ],
+            "mean": 0.022077490577528485,
+            "median": 0.02211858990085485,
+            "monte_carlo_standard_error_of_mean": 0.0002535472440128731
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.05360140305882375,
+              0.1317533330084973
+            ],
+            "mean": 0.08219559707833851,
+            "median": 0.07805552831539533,
+            "monte_carlo_standard_error_of_mean": 0.002042257169386158
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.7539282197176934,
+              0.9209760367655104
+            ],
+            "mean": 0.8587153955575009,
+            "median": 0.8681474997264471,
+            "monte_carlo_standard_error_of_mean": 0.004735290729374061
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6,
+              0.9
+            ],
+            "mean": 0.754,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.010290723487636325
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.0007255075674252779,
+              0.020298074654493743
+            ],
+            "mean": 0.007720256097662411,
+            "median": 0.006576312687075647,
+            "monte_carlo_standard_error_of_mean": 0.000474130664246663
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "naive": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.03977280534870959,
+              0.054269837238447596
+            ],
+            "mean": 0.046399816582300676,
+            "median": 0.04627874917032745,
+            "monte_carlo_standard_error_of_mean": 0.0003743488335755711
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.016998375546974462,
+              0.0267749938251781
+            ],
+            "mean": 0.021791719674252464,
+            "median": 0.022085136964955177,
+            "monte_carlo_standard_error_of_mean": 0.0002462028784764734
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.08300436827619993,
+              0.15921437604349628
+            ],
+            "mean": 0.11272444858214346,
+            "median": 0.10851156264509121,
+            "monte_carlo_standard_error_of_mean": 0.002175211462514155
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.7755717255717255,
+              0.9254479695429734
+            ],
+            "mean": 0.862350776040848,
+            "median": 0.8669438669438669,
+            "monte_carlo_standard_error_of_mean": 0.004501824524905454
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6,
+              0.9
+            ],
+            "mean": 0.7510000000000001,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.009373829893308653
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.0019079551076657403,
+              0.01616139869015874
+            ],
+            "mean": 0.007539939656531264,
+            "median": 0.006845131682214484,
+            "monte_carlo_standard_error_of_mean": 0.0003916960301897941
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "oracle_dm_hajek": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.01760645332359243,
+              0.031543160960239854
+            ],
+            "mean": 0.023806019070086264,
+            "median": 0.023666918307873392,
+            "monte_carlo_standard_error_of_mean": 0.0003519466475243831
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.017363828850610368,
+              0.03137879907639643
+            ],
+            "mean": 0.023678697243676702,
+            "median": 0.023652667335881988,
+            "monte_carlo_standard_error_of_mean": 0.00035424813678427313
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.06241897160756701,
+              0.18848808819518717
+            ],
+            "mean": 0.10130247157666487,
+            "median": 0.09345356756910414,
+            "monte_carlo_standard_error_of_mean": 0.0035453132335451962
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.6502516686727213,
+              0.9303260750629172
+            ],
+            "mean": 0.8258890469416784,
+            "median": 0.8454973191815296,
+            "monte_carlo_standard_error_of_mean": 0.007489965352481767
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6,
+              0.9
+            ],
+            "mean": 0.7250000000000001,
+            "median": 0.7,
+            "monte_carlo_standard_error_of_mean": 0.009360890055238479
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.0009589223966489119,
+              0.020547711028723242
+            ],
+            "mean": 0.009596747316598968,
+            "median": 0.008762487147288861,
+            "monte_carlo_standard_error_of_mean": 0.0005701350575310869
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "oracle_hajek": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.018548267530887272,
+              0.03141958398263747
+            ],
+            "mean": 0.024133282428361734,
+            "median": 0.023950636053089468,
+            "monte_carlo_standard_error_of_mean": 0.0003478148893452491
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.018017082721969665,
+              0.031470179195292054
+            ],
+            "mean": 0.0239939224313818,
+            "median": 0.023908359619269286,
+            "monte_carlo_standard_error_of_mean": 0.00035275552097245756
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.06275305482949683,
+              0.18540778037538666
+            ],
+            "mean": 0.1040831713765515,
+            "median": 0.09357898435946121,
+            "monte_carlo_standard_error_of_mean": 0.003604228666172124
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.6415089178247072,
+              0.9296969033811139
+            ],
+            "mean": 0.8223941350257139,
+            "median": 0.838166101323996,
+            "monte_carlo_standard_error_of_mean": 0.0074384302794858245
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.5475,
+              0.9
+            ],
+            "mean": 0.714,
+            "median": 0.7,
+            "monte_carlo_standard_error_of_mean": 0.009103223982122318
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.0014978356637258966,
+              0.020559314361345598
+            ],
+            "mean": 0.010107858456672525,
+            "median": 0.009309806093136308,
+            "monte_carlo_standard_error_of_mean": 0.0005568657770934193
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "row_weighted_demean": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.017017689406647996,
+              0.025501812526465484
+            ],
+            "mean": 0.02141493509834516,
+            "median": 0.02182968237213353,
+            "monte_carlo_standard_error_of_mean": 0.00023777594179252712
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.01702233028457125,
+              0.025530568542628255
+            ],
+            "mean": 0.02141455375723824,
+            "median": 0.0218315458901122,
+            "monte_carlo_standard_error_of_mean": 0.00023837129896766453
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.05009032546709985,
+              0.13374462488751312
+            ],
+            "mean": 0.0801305042582713,
+            "median": 0.07596235484502081,
+            "monte_carlo_standard_error_of_mean": 0.0021051852270823194
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.77585074953496,
+              0.9270324980851297
+            ],
+            "mean": 0.862757413283729,
+            "median": 0.8728526096947149,
+            "monte_carlo_standard_error_of_mean": 0.004419883502413618
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6,
+              0.9
+            ],
+            "mean": 0.757,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.009561602502940733
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.0008018638126644621,
+              0.01566900878879609
+            ],
+            "mean": 0.007428709965354921,
+            "median": 0.006564886460625641,
+            "monte_carlo_standard_error_of_mean": 0.00039194922264603014
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        },
+        "scalar_level_shift": {
+          "absolute_mae": {
+            "interval_95_across_replications": [
+              0.016998375546974462,
+              0.02677499382517809
+            ],
+            "mean": 0.021791719674252464,
+            "median": 0.022085136964955177,
+            "monte_carlo_standard_error_of_mean": 0.0002462028784764732
+          },
+          "centered_mae": {
+            "interval_95_across_replications": [
+              0.016998375546974462,
+              0.0267749938251781
+            ],
+            "mean": 0.021791719674252467,
+            "median": 0.022085136964955177,
+            "monte_carlo_standard_error_of_mean": 0.0002462028784764734
+          },
+          "max_abs_error": {
+            "interval_95_across_replications": [
+              0.05068597292782964,
+              0.13472553850205776
+            ],
+            "mean": 0.08084417858646259,
+            "median": 0.0747236313317001,
+            "monte_carlo_standard_error_of_mean": 0.002075156499460307
+          },
+          "rank_corr": {
+            "interval_95_across_replications": [
+              0.7755717255717255,
+              0.9254479695429734
+            ],
+            "mean": 0.862350776040848,
+            "median": 0.8669438669438669,
+            "monte_carlo_standard_error_of_mean": 0.004501824524905454
+          },
+          "top10_overlap": {
+            "interval_95_across_replications": [
+              0.6,
+              0.9
+            ],
+            "mean": 0.7510000000000001,
+            "median": 0.8,
+            "monte_carlo_standard_error_of_mean": 0.009373829893308653
+          },
+          "top10_regret": {
+            "interval_95_across_replications": [
+              0.0019079551076657403,
+              0.01616139869015874
+            ],
+            "mean": 0.007539939656531264,
+            "median": 0.006845131682214484,
+            "monte_carlo_standard_error_of_mean": 0.0003916960301897941
+          },
+          "topk_effective": {
+            "interval_95_across_replications": [
+              10.0,
+              10.0
+            ],
+            "mean": 10.0,
+            "median": 10.0,
+            "monte_carlo_standard_error_of_mean": 0.0
+          }
+        }
+      }
+    }
+  },
+  "seed": 20260812,
+  "target": "Equal synthetic users and uniform videos within category; category shares equal paired-random KuaiRand exposure shares.",
+  "target_category_shares": {
+    "\u4e09\u519c": 0.0065032623167685,
+    "\u4e8c\u6b21\u5143": 0.08989803790827046,
+    "\u4eb2\u5b50": 0.009052848890513103,
+    "\u4eba\u6587": 0.008443769113885098,
+    "\u5065\u5eb7": 0.004261421314372788,
+    "\u5065\u8eab": 0.004534972933349576,
+    "\u5176\u4ed6": 0.0036395188056052435,
+    "\u519b\u4e8b": 0.006755442715512728,
+    "\u559c\u5267": 0.05415039782526463,
+    "\u5947\u4eba\u5f02\u8c61": 0.004889735189210099,
+    "\u5ba0\u7269": 0.02691064051684159,
+    "\u5f71\u89c6\u7efc": 0.1403148835589066,
+    "\u60c5\u611f": 0.017052096623560917,
+    "\u623f\u4ea7\u5bb6\u5c45": 0.013025758731746306,
+    "\u6444\u5f71": 0.009409748268396882,
+    "\u6559\u80b2": 0.006513947926884782,
+    "\u65c5\u6e38": 0.016081843225002623,
+    "\u65f6\u5c1a": 0.017099113308072556,
+    "\u65f6\u653f\u8d44\u8baf": 0.0015002596603258256,
+    "\u660e\u661f\u5a31\u4e50": 0.03104169738779575,
+    "\u661f\u5ea7\u547d\u7406": 0.004434528198256537,
+    "\u6c11\u751f\u8d44\u8baf": 0.015207760317490849,
+    "\u6c7d\u8f66": 0.016265635719002653,
+    "\u6e38\u620f": 0.11212410695013453,
+    "\u751f\u6d3b": 0.02457262902339935,
+    "\u77ed\u5267": 0.04815363342800784,
+    "\u79d1\u5b66\u4e0e\u6cd5\u5f8b": 0.012117481871862438,
+    "\u7f8e\u5986": 0.02329249293146891,
+    "\u7f8e\u98df": 0.07168120978203493,
+    "\u81ea\u62cd": 0.007460692983187261,
+    "\u821e\u8e48": 0.031028874655656215,
+    "\u827a\u672f": 0.029975273498190926,
+    "\u8bfb\u4e66": 0.008706635122745604,
+    "\u8d22\u7ecf": 0.004945300361814759,
+    "\u8fd0\u52a8": 0.04457395403905377,
+    "\u97f3\u4e50": 0.04665764801172853,
+    "\u989c\u503c": 0.019381559628910135,
+    "\u9ad8\u65b0\u6570\u7801": 0.008341187256768802
+  },
+  "weak_overlap_exposure_scale_sensitivity": {
+    "cells": {
+      "150": {
+        "centered_mae": {
+          "cell_equal_demean": {
+            "interval_95_across_replications": [
+              0.013374976780285144,
+              0.023832944391242627
+            ],
+            "mean": 0.01914208026734285,
+            "median": 0.01895340965356152,
+            "monte_carlo_standard_error_of_mean": 0.0006874581480353834
+          },
+          "naive": {
+            "interval_95_across_replications": [
+              0.026650112083029552,
+              0.03522490722734237
+            ],
+            "mean": 0.03076009824261461,
+            "median": 0.031269938857465956,
+            "monte_carlo_standard_error_of_mean": 0.0005892584132686992
+          },
+          "oracle_dm_hajek": {
+            "interval_95_across_replications": [
+              0.025965184043203856,
+              0.03870943383344985
+            ],
+            "mean": 0.03289948557411088,
+            "median": 0.032646891248114804,
+            "monte_carlo_standard_error_of_mean": 0.0008528246928299614
+          },
+          "oracle_hajek": {
+            "interval_95_across_replications": [
+              0.02755502272745269,
+              0.03969813792422571
+            ],
+            "mean": 0.03413641620750829,
+            "median": 0.03485439060393114,
+            "monte_carlo_standard_error_of_mean": 0.0008799627072934775
+          },
+          "row_weighted_demean": {
+            "interval_95_across_replications": [
+              0.013723261409337962,
+              0.020073228087687963
+            ],
+            "mean": 0.01729869317747465,
+            "median": 0.017670322703054124,
+            "monte_carlo_standard_error_of_mean": 0.00043322004417751506
+          }
+        },
+        "importance_weight_ess_fraction": {
+          "interval_95_across_replications": [
+            0.03227768366697077,
+            0.06903153767758378
+          ],
+          "mean": 0.05532604143765337,
+          "median": 0.056306729344989676,
+          "monte_carlo_standard_error_of_mean": 0.00245500988779038
+        },
+        "n_rows": 150000
+      },
+      "30": {
+        "centered_mae": {
+          "cell_equal_demean": {
+            "interval_95_across_replications": [
+              0.021997560324504176,
+              0.03696508630234162
+            ],
+            "mean": 0.02818488681512296,
+            "median": 0.02695914034853586,
+            "monte_carlo_standard_error_of_mean": 0.0010003561424156424
+          },
+          "naive": {
+            "interval_95_across_replications": [
+              0.03127820084766377,
+              0.047174671952276113
+            ],
+            "mean": 0.037943948834952744,
+            "median": 0.036730674143924044,
+            "monte_carlo_standard_error_of_mean": 0.0009693372037764776
+          },
+          "oracle_dm_hajek": {
+            "interval_95_across_replications": [
+              0.05310043590430995,
+              0.08677930446414035
+            ],
+            "mean": 0.065719910753839,
+            "median": 0.06573430466063063,
+            "monte_carlo_standard_error_of_mean": 0.0022690904802138557
+          },
+          "oracle_hajek": {
+            "interval_95_across_replications": [
+              0.05502448566851326,
+              0.08368704090874424
+            ],
+            "mean": 0.06736228270635762,
+            "median": 0.06700258318289612,
+            "monte_carlo_standard_error_of_mean": 0.002018482206349003
+          },
+          "row_weighted_demean": {
+            "interval_95_across_replications": [
+              0.02054935030291164,
+              0.03341698127797176
+            ],
+            "mean": 0.025873902288242778,
+            "median": 0.025200558557662255,
+            "monte_carlo_standard_error_of_mean": 0.0008674940718882365
+          }
+        },
+        "importance_weight_ess_fraction": {
+          "interval_95_across_replications": [
+            0.04336137995982627,
+            0.07841556087873265
+          ],
+          "mean": 0.06056899907832334,
+          "median": 0.061127991345914304,
+          "monte_carlo_standard_error_of_mean": 0.002231455262032641
+        },
+        "n_rows": 30000
+      },
+      "300": {
+        "centered_mae": {
+          "cell_equal_demean": {
+            "interval_95_across_replications": [
+              0.01343070072991272,
+              0.02235381773801047
+            ],
+            "mean": 0.01820817368630029,
+            "median": 0.018271141445962227,
+            "monte_carlo_standard_error_of_mean": 0.0006052889812398203
+          },
+          "naive": {
+            "interval_95_across_replications": [
+              0.02209411007512019,
+              0.03549788195278841
+            ],
+            "mean": 0.029889156364891988,
+            "median": 0.029451263318908814,
+            "monte_carlo_standard_error_of_mean": 0.0008792922337585868
+          },
+          "oracle_dm_hajek": {
+            "interval_95_across_replications": [
+              0.018053713868256088,
+              0.031847896607995474
+            ],
+            "mean": 0.024682955852819474,
+            "median": 0.024997503732344703,
+            "monte_carlo_standard_error_of_mean": 0.0009129848355984972
+          },
+          "oracle_hajek": {
+            "interval_95_across_replications": [
+              0.019251971558466155,
+              0.031441143804005874
+            ],
+            "mean": 0.025590445264472784,
+            "median": 0.02601534303995495,
+            "monte_carlo_standard_error_of_mean": 0.0008364868855388518
+          },
+          "row_weighted_demean": {
+            "interval_95_across_replications": [
+              0.01243502018136905,
+              0.02006030549988888
+            ],
+            "mean": 0.0164323345103627,
+            "median": 0.016441447190284144,
+            "monte_carlo_standard_error_of_mean": 0.0005025963421035105
+          }
+        },
+        "importance_weight_ess_fraction": {
+          "interval_95_across_replications": [
+            0.03887598137083619,
+            0.06405919312388174
+          ],
+          "mean": 0.05040514062841245,
+          "median": 0.04871619685183827,
+          "monte_carlo_standard_error_of_mean": 0.0018671122787081368
+        },
+        "n_rows": 300000
+      },
+      "60": {
+        "centered_mae": {
+          "cell_equal_demean": {
+            "interval_95_across_replications": [
+              0.01607087966832007,
+              0.028108100659096098
+            ],
+            "mean": 0.022844112336098586,
+            "median": 0.023204102724018592,
+            "monte_carlo_standard_error_of_mean": 0.0008154096914500121
+          },
+          "naive": {
+            "interval_95_across_replications": [
+              0.030182403190326047,
+              0.041349927947091726
+            ],
+            "mean": 0.035369798943142475,
+            "median": 0.03544605900277049,
+            "monte_carlo_standard_error_of_mean": 0.0007577599839706555
+          },
+          "oracle_dm_hajek": {
+            "interval_95_across_replications": [
+              0.04126646831480869,
+              0.07070041717358974
+            ],
+            "mean": 0.05295411615579332,
+            "median": 0.05293722926640031,
+            "monte_carlo_standard_error_of_mean": 0.0020144896300812996
+          },
+          "oracle_hajek": {
+            "interval_95_across_replications": [
+              0.043066263760858106,
+              0.06878838943957764
+            ],
+            "mean": 0.05398460353570741,
+            "median": 0.053575974703340676,
+            "monte_carlo_standard_error_of_mean": 0.00180470734277452
+          },
+          "row_weighted_demean": {
+            "interval_95_across_replications": [
+              0.015352321087609859,
+              0.025013545991506382
+            ],
+            "mean": 0.020554649868127967,
+            "median": 0.021054680961648427,
+            "monte_carlo_standard_error_of_mean": 0.0006961564460065894
+          }
+        },
+        "importance_weight_ess_fraction": {
+          "interval_95_across_replications": [
+            0.029752858796217373,
+            0.074045608249102
+          ],
+          "mean": 0.056559429106582196,
+          "median": 0.05895043704615842,
+          "monte_carlo_standard_error_of_mean": 0.0029830166826853963
+        },
+        "n_rows": 60000
+      }
+    },
+    "exposures_per_user": [
+      30,
+      60,
+      150,
+      300
+    ],
+    "n_replications_per_cell": 20,
+    "n_users": 1000,
+    "purpose": "precision diagnostic: true propensity weighting is identified in the simulation but unstable when effective overlap is small",
+    "scenario": "combined_weak_overlap"
+  }
+}
