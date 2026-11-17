@@ -2,7 +2,7 @@
 
 KuaiRand-Pure and the predicted-category supplement are publicly obtainable
 from their upstream records.  Their public availability does not grant this
-review repository permission to republish them under the license for original
+public repository permission to republish them under the license for original
 project code and documentation.
 
 ## Included in the focused repository
@@ -29,12 +29,12 @@ project code and documentation.
 
 ## Verification levels
 
-1. **Data-free inspection:** reviewers can read the paper and technical
+1. **Data-free inspection:** readers can read the paper and technical
    appendix, inspect every distributed aggregate, and run the focused unit tests
    without downloading data.
 2. **Data-free known-truth rerun:** P12 can be rerun independently because its
    finite worlds are generated from declared parameters.
-3. **KuaiRand rerun:** P7--P11 and P13--P14 require the reviewer to download the
+3. **KuaiRand rerun:** P7--P11 and P13--P14 require the reader to download the
    official KuaiRand inputs, verify the complete published digests before
    parsing, and configure the paths locally.
 
@@ -45,5 +45,5 @@ official archive.  A checksum mismatch is a hard stop: do not extract, analyze,
 or substitute the mismatched bytes.
 
 Downloaded data and rerun outputs must remain outside the released repository.
-This omission does not narrow what a reviewer can read in the self-contained
+This omission does not narrow what a reader can read in the self-contained
 paper and technical appendix; it limits only optional end-to-end execution.
