@@ -1,15 +1,15 @@
 # Third-Party Notices
 
-The root `LICENSE` applies only to original code and documentation for which the
-anonymous authors hold the necessary rights.  It does not grant rights in the
+The root MIT `LICENSE` applies only to original code and documentation for which
+the authors hold the necessary rights. It does not grant rights in the
 datasets, metadata, dependencies, fonts, conference materials, or other
 third-party assets described below.
 
 ## KuaiRand-Pure
 
 The real-data stages use KuaiRand-Pure random-insertion and standard-serving
-interaction logs.  The dataset is not redistributed in this reviewer
-repository.  Reviewers who elect to rerun those stages must obtain it from the
+interaction logs. The dataset is not redistributed in this public
+repository. Readers who elect to rerun those stages must obtain it from the
 official sources:
 
 - project repository: <https://github.com/chongminggao/KuaiRand>;
@@ -42,7 +42,7 @@ Packages listed in `requirements.txt` retain their own licenses and attribution
 requirements.  Fonts and other third-party assets embedded in the prebuilt
 technical-appendix PDF retain their respective licenses.  No dependency source
 tree, model weight, embedding, ACM template source, or upstream repository
-checkout is redistributed under the root peer-review notice.
+checkout is redistributed under the root MIT License.
 
-The focused P7--P14 reviewer repository excludes the earlier KuaiRec caption
+The focused P7--P14 public repository excludes the earlier KuaiRec caption
 pipeline and its external text encoder entirely.
