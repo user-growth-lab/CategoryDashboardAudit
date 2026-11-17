@@ -1,14 +1,27 @@
-# Anonymous Reviewer Repository: Category-Dashboard Audit
+# CategoryDashboardAudit
 
-This optional repository supports verification of the methods and evidence for
-an anonymous WSDM 2027 submission.  The main paper is self-contained: no claim
-requires a reviewer to visit this repository, run code, or obtain external
-data.  The included technical appendix is also explanatory rather than a source
-of assumptions needed by the main paper.
+Code and frozen aggregate evidence for **When Category Means Move: A
+Paired-Support Audit of Recommendation Logs with Random Insertions**, accepted
+at WSDM 2027.
+
+**Authors:** Yu Zhang, Zhihan Wang, Yuhang Lu, and Shuai Li.
+**Corresponding author:** Zhihan Wang.
+
+- Paper DOI: <https://doi.org/10.1145/3862322.3863593>
+- Versioned release: <https://github.com/user-growth-lab/CategoryDashboardAudit/releases/tag/v1.0.0>
+
+The paper audits category-level engagement estimates in recommendation logs
+using random insertions as a reference on shared user and video support. This
+repository provides the analysis code, frozen aggregate outputs, and technical
+appendix needed to inspect that evidence. The main paper is self-contained:
+no claim requires a reader to visit this repository, run code, or obtain
+external data. The included technical appendix is explanatory rather than a
+source of assumptions needed by the main paper; its original anonymous review
+version is preserved unchanged.
 
 ## Focused scope
 
-The reviewer repository is limited to the P7--P14 evidence track:
+The repository is limited to the P7--P14 evidence track:
 
 - P7--P11 and P13--P14 code, tests, configurations, and frozen aggregate
   KuaiRand audit outputs;
@@ -23,14 +36,14 @@ row-level derivatives, user or video identifier lists, model weights,
 embeddings, caches, logs, local repository history, internal reviews, and
 release-administration records.
 
-## Install the focused review environment
+## Install the focused environment
 
 Create the environment outside the repository so that virtual-environment and
 cache files cannot alter the released tree:
 
 ```bash
-python3 -m venv ../category-audit-review-env
-source ../category-audit-review-env/bin/activate
+python3 -m venv ../category-audit-env
+source ../category-audit-env/bin/activate
 python3 -m pip install -r requirements.txt
 python3 -m pip check
 ```
@@ -91,7 +104,7 @@ PYTHONDONTWRITEBYTECODE=1 python3 code/p13_dependence_sensitivity.py
 PYTHONDONTWRITEBYTECODE=1 python3 code/p14_split_reference_decision.py
 ```
 
-The frozen aggregate files are the review snapshot.  Cross-platform reruns
+The frozen aggregate files preserve the paper's review snapshot. Cross-platform reruns
 should reproduce the documented estimands and conclusions; byte identity of
 new numerical outputs is not asserted across operating systems or numerical
 library builds.
@@ -104,7 +117,7 @@ intrinsic category effect, or make the standard and random logs matched trials.
 The P12 finite worlds are synthetic failure probes rather than a second
 platform validation.
 
-Original code and documentation are supplied only under the restricted
-anonymous peer-review notice in `LICENSE`.  Third-party data, dependencies,
-conference materials, and fonts retain their own terms; see
+Original code and documentation are released under the MIT License in
+`LICENSE`. Third-party data, dependencies, conference materials, and fonts
+retain their own terms; see
 `THIRD_PARTY_NOTICES.md` and `DATA_ACCESS_AND_RELEASE_BOUNDARY.md`.
